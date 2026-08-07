@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/provider/theme-provider";
+import { Navbar } from "@/components/navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,6 +33,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           enableSystem
           disableTransitionOnChange
         >
+          <div
+            aria-hidden
+            className="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
+          >
+            <div className="absolute -top-40 -left-32 size-[420px] rounded-full bg-accent/[0.08] blur-[110px]" />
+            <div className="absolute top-24 -right-32 size-[380px] rounded-full bg-accent/[0.06] blur-[110px]" />
+          </div>
+          <Navbar />
           {children}
         </ThemeProvider>
       </body>
