@@ -37,7 +37,11 @@ export function Navbar() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 pt-4 tablet:pt-5 desktop:pt-6">
       <div className="container-app flex items-center justify-between gap-4">
-        <Link href="/" aria-label="Origin home" className="shrink-0">
+        <Link
+          href="/"
+          aria-label="Origin home"
+          className="flex shrink-0 items-center"
+        >
           <Image
             src={logoLight}
             alt="Origin"
@@ -53,7 +57,7 @@ export function Navbar() {
         </Link>
 
         <nav className="hidden items-center gap-2 desktop:flex">
-          <div className="glass-nav flex items-center gap-0.5 rounded-pill px-1.5 py-1.5 text-label-lg backdrop-blur-[var(--nav-blur)] backdrop-saturate-[1.8]">
+          <div className="glass-nav flex items-center gap-0.5 rounded-pill px-1.5 py-1.5 text-label-lg backdrop-blur-(--nav-blur) backdrop-saturate-[1.8]">
             {primaryLinks.map((link) => (
               <Link
                 key={link.href}
