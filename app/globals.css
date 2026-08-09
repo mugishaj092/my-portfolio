@@ -254,6 +254,57 @@
 }
 
 
+/* Liquid Glass: an always-dark, highly refractive glass panel for
+   floating illustrative surfaces (e.g. the hero code card) — independent
+   of site theme, evoking iOS 26's Liquid Glass: layered blur, an ambient
+   drifting sheen, and a cursor-tracked specular highlight that reacts to
+   pointer movement via --pointer-x/--pointer-y, set by LiquidGlassPanel
+   (components/ui/liquid-glass-panel.tsx) using motion values.
+   Two rendering constraints shape this utility:
+   - backdrop-filter is deliberately left off — same quirk as glass-nav
+     above, it must stay a Tailwind backdrop-blur/backdrop-saturate class
+     in markup or the build strips the unprefixed property.
+   - the 3D tilt transform lives on a *separate* outer wrapper with no
+     backdrop-filter of its own. Pairing `transform` (or a blended child)
+     with an element that also has `backdrop-filter` makes some browsers
+     drop the blurred background entirely, so this class and its sheen
+     never carry a transform or mix-blend-mode. */
+
+@utility liquid-glass {
+    position: relative;
+    background-color: rgba(10, 10, 12, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px var(--glass-shadow), inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(255, 255, 255, 0.05);
+}
+
+@utility liquid-glass-sheen {
+    background: radial-gradient( circle at var(--pointer-x, 50%) var(--pointer-y, 15%), rgba(255, 255, 255, 0.01), transparent 45%);
+    transition: background 0.3s ease-out;
+}
+
+@utility liquid-glass-shimmer {
+    background: linear-gradient( 120deg, transparent 20%, rgba(255, 255, 255, 0.01) 40%, rgba(255, 255, 255, 0.03) 50%, transparent 65%);
+    background-size: 250% 250%;
+    animation: liquid-glass-drift 10s ease-in-out infinite;
+}
+
+@keyframes liquid-glass-drift {
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .liquid-glass-shimmer {
+        animation: none;
+    }
+}
+
+
 /* ---------------------------------------------------------------- */
 
 
