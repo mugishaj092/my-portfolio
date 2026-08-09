@@ -45,13 +45,13 @@ export function Navbar() {
           <Image
             src={logoLight}
             alt="Origin"
-            className="block h-16 w-auto dark:hidden"
+            className="block h-8 w-auto dark:hidden"
             priority
           />
           <Image
             src={logoDark}
             alt="Origin"
-            className="hidden h-16 w-auto dark:block"
+            className="hidden h-8 w-auto dark:block"
             priority
           />
         </Link>

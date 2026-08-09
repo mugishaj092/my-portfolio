@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mugisha Joseph — Full-Stack & Mobile Developer",
+  title: "Mugisha Joseph",
   description:
     "Portfolio of Mugisha Joseph, a full-stack and mobile developer building performant, accessible, and aesthetically refined products.",
 };
@@ -38,8 +38,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             aria-hidden
             className="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
           >
-            <div className="absolute -top-40 -left-32 size-[420px] rounded-full bg-accent/[0.08] blur-[110px]" />
-            <div className="absolute top-24 -right-32 size-[380px] rounded-full bg-accent/[0.06] blur-[110px]" />
+            <div className="absolute -top-40 -left-32 size-105 rounded-full bg-accent/8 blur-[110px]" />
+            <div className="absolute top-24 -right-32 size-95 rounded-full bg-accent/6 blur-[110px]" />
           </div>
           <Navbar />
           {children}

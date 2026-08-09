@@ -21,7 +21,7 @@ export default function Home() {
             >
               Learning
             </a>{" "}
-            center. jfhadpkfh;dsa fjdhfjkdashfl asd
+            
           </p>
         </div>
       </main>

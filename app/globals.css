@@ -1,231 +1,231 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
-
 @custom-variant dark (&:is(.dark *));
-
 @theme inline {
-  /* Terminal Glass breakpoints — stepped, not fluid */
-  --breakpoint-tablet: 600px;
-  --breakpoint-desktop: 1024px;
-  --breakpoint-wide: 1440px;
-
-  /* fonts */
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-sans);
-
-  /* shadcn semantic colors, remapped to Terminal Glass tokens below */
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
-
-  /* Terminal Glass vocabulary — same values as above, named per design.md */
-  --color-surface: var(--surface);
-  --color-on-surface: var(--on-surface);
-  --color-neutral: var(--neutral);
-  --color-tertiary: var(--tertiary);
-  --color-error: var(--destructive);
-  --color-glass-surface: var(--glass-surface);
-  --color-glass-border: var(--glass-border);
-  --color-glass-highlight: var(--glass-highlight);
-  --color-glass-shadow: var(--glass-shadow);
-  --color-scrim: var(--scrim);
-  --color-status-online: #22c55e;
-
-  /* rounded scale */
-  --radius-sm: 6px;
-  --radius-md: 14px;
-  --radius-lg: 20px;
-  --radius-pill: 999px;
-
-  /* spacing scale */
-  --spacing-xs: 4px;
-  --spacing-sm: 8px;
-  --spacing-md: 12px;
-  --spacing-lg: 20px;
-  --spacing-xl: 32px;
-  --spacing-gutter-mobile: 16px;
-  --spacing-gutter-tablet: 24px;
-  --spacing-gutter-desktop: 32px;
-  --spacing-section-mobile: 56px;
-  --spacing-section-tablet: 88px;
-  --spacing-section-desktop: 128px;
+    /* Terminal Glass breakpoints — stepped, not fluid */
+    --breakpoint-tablet: 600px;
+    --breakpoint-desktop: 1024px;
+    --breakpoint-wide: 1440px;
+    /* fonts */
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
+    --font-heading: var(--font-sans);
+    /* shadcn semantic colors, remapped to Terminal Glass tokens below */
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+    /* Terminal Glass vocabulary — same values as above, named per design.md */
+    --color-surface: var(--surface);
+    --color-on-surface: var(--on-surface);
+    --color-neutral: var(--neutral);
+    --color-tertiary: var(--tertiary);
+    --color-error: var(--destructive);
+    --color-glass-surface: var(--glass-surface);
+    --color-glass-border: var(--glass-border);
+    --color-glass-highlight: var(--glass-highlight);
+    --color-glass-shadow: var(--glass-shadow);
+    --color-scrim: var(--scrim);
+    --color-status-online: #22c55e;
+    /* rounded scale */
+    --radius-sm: 6px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --radius-pill: 999px;
+    /* spacing scale */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 12px;
+    --spacing-lg: 20px;
+    --spacing-xl: 32px;
+    --spacing-gutter-mobile: 16px;
+    --spacing-gutter-tablet: 24px;
+    --spacing-gutter-desktop: 32px;
+    --spacing-section-mobile: 56px;
+    --spacing-section-tablet: 88px;
+    --spacing-section-desktop: 128px;
 }
 
 :root {
-  /* Terminal Glass — light theme */
-  --neutral: #f5f5f7;
-  --surface: #ffffff;
-  --on-surface: #171717;
-  --tertiary: #ffffff;
-  --glass-surface: rgba(255, 255, 255, 0.55);
-  --glass-border: rgba(255, 255, 255, 0.8);
-  --glass-highlight: rgba(255, 255, 255, 0.9);
-  --glass-shadow: rgba(23, 23, 23, 0.1);
-  --backdrop-blur: 20px;
-  --scrim: rgba(245, 245, 247, 0.6);
-  /* Nav sits over scrolling content at all times, so it gets a denser
+    /* Terminal Glass — light theme */
+    --neutral: #f5f5f7;
+    --surface: #ffffff;
+    --on-surface: #171717;
+    --tertiary: #ffffff;
+    --glass-surface: rgba(255, 255, 255, 0.55);
+    --glass-border: rgba(255, 255, 255, 0.8);
+    --glass-highlight: rgba(255, 255, 255, 0.9);
+    --glass-shadow: rgba(23, 23, 23, 0.1);
+    --backdrop-blur: 20px;
+    --scrim: rgba(245, 245, 247, 0.6);
+    /* Nav sits over scrolling content at all times, so it gets a denser
      fill than card/chip glass — still translucent + blurred, just not
      see-through enough for body text to read through it. */
-  --nav-surface: rgba(255, 255, 255, 0.6);
-  --nav-blur: 40px;
-
-  --background: var(--neutral);
-  --foreground: var(--on-surface);
-  --card: var(--surface);
-  --card-foreground: var(--on-surface);
-  --popover: var(--surface);
-  --popover-foreground: var(--on-surface);
-  --primary: #171717;
-  --primary-foreground: var(--tertiary);
-  --secondary: var(--surface);
-  --secondary-foreground: var(--on-surface);
-  --muted: var(--neutral);
-  --muted-foreground: #6b7280;
-  --accent: #3b82f6;
-  --accent-foreground: var(--tertiary);
-  --destructive: #dc2626;
-  --border: #e5e7eb;
-  --input: #e5e7eb;
-  --ring: var(--accent);
-
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: var(--surface);
-  --sidebar-foreground: var(--on-surface);
-  --sidebar-primary: var(--primary);
-  --sidebar-primary-foreground: var(--primary-foreground);
-  --sidebar-accent: var(--neutral);
-  --sidebar-accent-foreground: var(--on-surface);
-  --sidebar-border: var(--border);
-  --sidebar-ring: var(--ring);
+    --nav-surface: rgba(255, 255, 255, 0.6);
+    --nav-blur: 2px;
+    --background: var(--neutral);
+    --foreground: var(--on-surface);
+    --card: var(--surface);
+    --card-foreground: var(--on-surface);
+    --popover: var(--surface);
+    --popover-foreground: var(--on-surface);
+    --primary: #171717;
+    --primary-foreground: var(--tertiary);
+    --secondary: var(--surface);
+    --secondary-foreground: var(--on-surface);
+    --muted: var(--neutral);
+    --muted-foreground: #6b7280;
+    --accent: #3b82f6;
+    --accent-foreground: var(--tertiary);
+    --destructive: #dc2626;
+    --border: #e5e7eb;
+    --input: #e5e7eb;
+    --ring: var(--accent);
+    --chart-1: oklch(0.87 0 0);
+    --chart-2: oklch(0.556 0 0);
+    --chart-3: oklch(0.439 0 0);
+    --chart-4: oklch(0.371 0 0);
+    --chart-5: oklch(0.269 0 0);
+    --sidebar: var(--surface);
+    --sidebar-foreground: var(--on-surface);
+    --sidebar-primary: var(--primary);
+    --sidebar-primary-foreground: var(--primary-foreground);
+    --sidebar-accent: var(--neutral);
+    --sidebar-accent-foreground: var(--on-surface);
+    --sidebar-border: var(--border);
+    --sidebar-ring: var(--ring);
 }
 
 .dark {
-  /* Terminal Glass — dark theme */
-  --neutral: #0a0a0a;
-  --surface: #141414;
-  --on-surface: #f5f5f5;
-  --tertiary: #0a0a0a;
-  --glass-surface: rgba(255, 255, 255, 0.06);
-  --glass-border: rgba(255, 255, 255, 0.14);
-  --glass-highlight: rgba(255, 255, 255, 0.22);
-  --glass-shadow: rgba(0, 0, 0, 0.45);
-  --backdrop-blur: 24px;
-  --scrim: rgba(10, 10, 10, 0.6);
-  --nav-surface: rgba(20, 20, 20, 0.62);
-  --nav-blur: 44px;
-
-  --background: var(--neutral);
-  --foreground: var(--on-surface);
-  --card: var(--surface);
-  --card-foreground: var(--on-surface);
-  --popover: var(--surface);
-  --popover-foreground: var(--on-surface);
-  --primary: #f5f5f5;
-  --primary-foreground: var(--tertiary);
-  --secondary: var(--surface);
-  --secondary-foreground: var(--on-surface);
-  --muted: var(--neutral);
-  --muted-foreground: #9ca3af;
-  --accent: #60a5fa;
-  --accent-foreground: var(--tertiary);
-  --destructive: #f87171;
-  --border: #262626;
-  --input: #262626;
-  --ring: var(--accent);
-
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: var(--surface);
-  --sidebar-foreground: var(--on-surface);
-  --sidebar-primary: var(--primary);
-  --sidebar-primary-foreground: var(--primary-foreground);
-  --sidebar-accent: var(--neutral);
-  --sidebar-accent-foreground: var(--on-surface);
-  --sidebar-border: var(--border);
-  --sidebar-ring: var(--ring);
+    /* Terminal Glass — dark theme */
+    --neutral: #0a0a0a;
+    --surface: #141414;
+    --on-surface: #f5f5f5;
+    --tertiary: #0a0a0a;
+    --glass-surface: rgba(255, 255, 255, 0.06);
+    --glass-border: rgba(255, 255, 255, 0.14);
+    --glass-highlight: rgba(255, 255, 255, 0.22);
+    --glass-shadow: rgba(0, 0, 0, 0.45);
+    --backdrop-blur: 24px;
+    --scrim: rgba(10, 10, 10, 0.6);
+    --nav-surface: rgba(20, 20, 20, 0.62);
+    --nav-blur: 2px;
+    --background: var(--neutral);
+    --foreground: var(--on-surface);
+    --card: var(--surface);
+    --card-foreground: var(--on-surface);
+    --popover: var(--surface);
+    --popover-foreground: var(--on-surface);
+    --primary: #f5f5f5;
+    --primary-foreground: var(--tertiary);
+    --secondary: var(--surface);
+    --secondary-foreground: var(--on-surface);
+    --muted: var(--neutral);
+    --muted-foreground: #9ca3af;
+    --accent: #60a5fa;
+    --accent-foreground: var(--tertiary);
+    --destructive: #f87171;
+    --border: #262626;
+    --input: #262626;
+    --ring: var(--accent);
+    --chart-1: oklch(0.87 0 0);
+    --chart-2: oklch(0.556 0 0);
+    --chart-3: oklch(0.439 0 0);
+    --chart-4: oklch(0.371 0 0);
+    --chart-5: oklch(0.269 0 0);
+    --sidebar: var(--surface);
+    --sidebar-foreground: var(--on-surface);
+    --sidebar-primary: var(--primary);
+    --sidebar-primary-foreground: var(--primary-foreground);
+    --sidebar-accent: var(--neutral);
+    --sidebar-accent-foreground: var(--on-surface);
+    --sidebar-border: var(--border);
+    --sidebar-ring: var(--ring);
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-  html {
-    @apply font-sans;
-  }
+    * {
+        @apply border-border outline-ring/50;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+    html {
+        @apply font-sans;
+    }
 }
 
+
 /* ---------------------------------------------------------------- */
+
+
 /* Terminal Glass primitives                                        */
+
+
 /* ---------------------------------------------------------------- */
+
 
 /* Container: centered, capped width, margins grow with breakpoint */
-@utility container-app {
-  width: 100%;
-  max-width: 1200px;
-  margin-inline: auto;
-  padding-inline: 20px;
 
-  @variant tablet {
-    padding-inline: 40px;
-  }
-  @variant desktop {
-    padding-inline: 64px;
-  }
+@utility container-app {
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 20px;
+    @variant tablet {
+        padding-inline: 40px;
+    }
+    @variant desktop {
+        padding-inline: 64px;
+    }
 }
+
 
 /* Base glass recipe: blur + saturate, translucent fill, light-catching border.
    Used by button-glass, card-glass, input, chip-tech. Never mix with flat styling. */
+
 @utility glass {
-  background-color: var(--glass-surface);
-  border: 1px solid var(--glass-border);
-  backdrop-filter: blur(var(--backdrop-blur)) saturate(160%);
-  -webkit-backdrop-filter: blur(var(--backdrop-blur)) saturate(160%);
+    background-color: var(--glass-surface);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(var(--backdrop-blur)) saturate(160%);
+    -webkit-backdrop-filter: blur(var(--backdrop-blur)) saturate(160%);
 }
 
+
 /* Adds the elevation shadow used by card-glass */
+
 @utility glass-shadow {
-  box-shadow: 0 8px 32px var(--glass-shadow);
+    box-shadow: 0 8px 32px var(--glass-shadow);
 }
+
 
 /* nav-glass: its own saturate/shadow values per design.md.
    Denser fill + stronger blur than generic glass — the nav floats over
@@ -235,157 +235,159 @@
    custom @utility blocks (only -webkit- survives in the compiled CSS), so
    blur is applied via Tailwind's own backdrop-blur/backdrop-saturate
    utilities in markup instead — keep pairing them wherever glass-nav is used. */
+
 @utility glass-nav {
-  background-color: var(--nav-surface);
-  border: 1px solid var(--glass-border);
-  -webkit-backdrop-filter: blur(var(--nav-blur)) saturate(180%);
-  box-shadow: 0 12px 40px var(--glass-shadow);
+    background-color: var(--nav-surface);
+    border: 1px solid var(--glass-border);
+    -webkit-backdrop-filter: blur(var(--nav-blur)) saturate(180%);
+    box-shadow: 0 12px 40px var(--glass-shadow);
 }
+
 
 /* status-dot: fixed color in both themes — availability should never theme-swap */
+
 @utility status-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: var(--radius-pill);
-  background-color: #22c55e;
+    width: 8px;
+    height: 8px;
+    border-radius: var(--radius-pill);
+    background-color: #22c55e;
 }
 
+
 /* ---------------------------------------------------------------- */
+
+
 /* Typography — stepped per breakpoint, no fluid clamp()             */
+
+
 /* ---------------------------------------------------------------- */
 
 @utility text-headline-display {
-  font-family: var(--font-sans);
-  font-weight: 600;
-  letter-spacing: -1.4px;
-  font-size: 28px;
-  line-height: 32px;
-
-  @variant tablet {
-    font-size: 38px;
-    line-height: 42px;
-  }
-  @variant desktop {
-    font-size: 52px;
-    line-height: 56px;
-  }
+    font-family: var(--font-sans);
+    font-weight: 600;
+    letter-spacing: -1.4px;
+    font-size: 28px;
+    line-height: 32px;
+    @variant tablet {
+        font-size: 38px;
+        line-height: 42px;
+    }
+    @variant desktop {
+        font-size: 52px;
+        line-height: 56px;
+    }
 }
 
 @utility text-headline-lg {
-  font-family: var(--font-sans);
-  font-weight: 500;
-  letter-spacing: -0.4px;
-  font-size: 21px;
-  line-height: 26px;
-
-  @variant tablet {
-    font-size: 26px;
-    line-height: 32px;
-  }
-  @variant desktop {
-    font-size: 32px;
-    line-height: 38px;
-  }
+    font-family: var(--font-sans);
+    font-weight: 500;
+    letter-spacing: -0.4px;
+    font-size: 21px;
+    line-height: 26px;
+    @variant tablet {
+        font-size: 26px;
+        line-height: 32px;
+    }
+    @variant desktop {
+        font-size: 32px;
+        line-height: 38px;
+    }
 }
 
 @utility text-headline-md {
-  font-family: var(--font-sans);
-  font-weight: 500;
-  letter-spacing: -0.3px;
-  font-size: 18px;
-  line-height: 24px;
-
-  @variant tablet {
-    font-size: 20px;
-    line-height: 27px;
-  }
-  @variant desktop {
-    font-size: 24px;
-    line-height: 32px;
-  }
+    font-family: var(--font-sans);
+    font-weight: 500;
+    letter-spacing: -0.3px;
+    font-size: 18px;
+    line-height: 24px;
+    @variant tablet {
+        font-size: 20px;
+        line-height: 27px;
+    }
+    @variant desktop {
+        font-size: 24px;
+        line-height: 32px;
+    }
 }
 
 @utility text-headline-sm {
-  font-family: var(--font-sans);
-  font-weight: 500;
-  letter-spacing: 0px;
-  font-size: 16px;
-  line-height: 20px;
-
-  @variant tablet {
-    font-size: 17px;
-    line-height: 22px;
-  }
-  @variant desktop {
-    font-size: 18px;
-    line-height: 24px;
-  }
+    font-family: var(--font-sans);
+    font-weight: 500;
+    letter-spacing: 0px;
+    font-size: 16px;
+    line-height: 20px;
+    @variant tablet {
+        font-size: 17px;
+        line-height: 22px;
+    }
+    @variant desktop {
+        font-size: 18px;
+        line-height: 24px;
+    }
 }
 
 @utility text-body-lg {
-  font-family: var(--font-sans);
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-
-  @variant tablet {
-    font-size: 17px;
-    line-height: 26px;
-  }
-  @variant desktop {
-    font-size: 18px;
-    line-height: 28px;
-  }
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    @variant tablet {
+        font-size: 17px;
+        line-height: 26px;
+    }
+    @variant desktop {
+        font-size: 18px;
+        line-height: 28px;
+    }
 }
 
 @utility text-body-md {
-  font-family: var(--font-sans);
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 21px;
-
-  @variant tablet {
-    font-size: 15px;
-    line-height: 22px;
-  }
-  @variant desktop {
-    font-size: 16px;
-    line-height: 24px;
-  }
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    @variant tablet {
+        font-size: 15px;
+        line-height: 22px;
+    }
+    @variant desktop {
+        font-size: 16px;
+        line-height: 24px;
+    }
 }
 
 @utility text-body-sm {
-  font-family: var(--font-sans);
-  font-weight: 400;
-  font-size: 13px;
-  line-height: 18px;
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
 }
 
 @utility text-label-lg {
-  font-family: var(--font-sans);
-  font-weight: 500;
-  font-size: 13px;
-  line-height: 18px;
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
 }
 
 @utility text-label-sm {
-  font-family: var(--font-sans);
-  font-weight: 500;
-  font-size: 11px;
-  line-height: 14px;
-  letter-spacing: 0.2px;
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 14px;
+    letter-spacing: 0.2px;
 }
 
 @utility text-mono-tag {
-  font-family: var(--font-mono);
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 16px;
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
 }
 
 @utility text-mono-caption {
-  font-family: var(--font-mono);
-  font-weight: 400;
-  font-size: 11px;
-  line-height: 15px;
+    font-family: var(--font-mono);
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 15px;
 }
