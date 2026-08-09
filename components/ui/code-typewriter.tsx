@@ -74,7 +74,7 @@ function CodeTypewriter({ lines }: { lines: CodeLine[] }) {
 
         return (
           <span key={index} className="flex whitespace-pre">
-            <span className="mr-4 w-4 shrink-0 select-none text-right text-neutral-600">
+            <span className="mr-4 w-4 shrink-0 select-none text-right text-neutral-500 dark:text-neutral-600">
               {index + 1}
             </span>
             <span>
@@ -86,7 +86,7 @@ function CodeTypewriter({ lines }: { lines: CodeLine[] }) {
               {showCaret && (
                 <motion.span
                   aria-hidden
-                  className="ml-0.5 inline-block h-[1em] w-[2px] translate-y-[0.15em] bg-emerald-300 align-middle"
+                  className="ml-0.5 inline-block h-[1em] w-[2px] translate-y-[0.15em] bg-emerald-600 align-middle dark:bg-emerald-300"
                   animate={{ opacity: [1, 1, 0, 0] }}
                   transition={{ duration: 1, repeat: Infinity, times: [0, 0.5, 0.5, 1] }}
                 />

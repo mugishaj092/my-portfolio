@@ -254,12 +254,17 @@
 }
 
 
-/* Liquid Glass: an always-dark, highly refractive glass panel for
-   floating illustrative surfaces (e.g. the hero code card) — independent
-   of site theme, evoking iOS 26's Liquid Glass: layered blur, an ambient
-   drifting sheen, and a cursor-tracked specular highlight that reacts to
-   pointer movement via --pointer-x/--pointer-y, set by LiquidGlassPanel
-   (components/ui/liquid-glass-panel.tsx) using motion values.
+/* Liquid Glass: a highly refractive glass panel for floating illustrative
+   surfaces (e.g. the hero code card), evoking iOS 26's Liquid Glass:
+   layered blur, an ambient drifting sheen, and a cursor-tracked specular
+   highlight that reacts to pointer movement via --pointer-x/--pointer-y,
+   set by LiquidGlassPanel (components/ui/liquid-glass-panel.tsx) using
+   motion values. It shares the same light/dark glass-surface pair as
+   every other floating surface in the system rather than carrying its
+   own fixed tint — the hero code card's syntax-highlight colors have
+   their own light/dark pair for the same reason (see the `syntax` map
+   in components/hero.tsx and the caret/line-number classes in
+   components/ui/code-typewriter.tsx).
    Two rendering constraints shape this utility:
    - backdrop-filter is deliberately left off — same quirk as glass-nav
      above, it must stay a Tailwind backdrop-blur/backdrop-saturate class
@@ -272,9 +277,9 @@
 
 @utility liquid-glass {
     position: relative;
-    background-color: rgba(10, 10, 12, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0 8px 32px var(--glass-shadow), inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(255, 255, 255, 0.05);
+    background-color: var(--glass-surface);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px var(--glass-shadow), inset 0 1px 0 var(--glass-highlight), inset 0 -1px 0 rgba(255, 255, 255, 0.05);
 }
 
 @utility liquid-glass-sheen {

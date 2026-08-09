@@ -15,7 +15,7 @@ export const CONTACT_INFO: ContactInfo = {
 };
 
 export const TAGLINE: string =
-  "Dedicated to crafting accessible web and mobile solutions, from Kigali — the heart of Africa.";
+  "2+ years shipping production apps across hospitality, nonprofit, and education. Currently building Paibill — a hospitality inventory platform — with React, Next.js, and FastAPI.";
 
 export const SUMMARY: string =
   "Full-Stack and Mobile App Developer with 2+ years of experience building and shipping production applications across hospitality, nonprofit, education, and mobile sectors. Solid expertise in JavaScript/TypeScript, React, Next.js, Node.js/Express.js, and FastAPI within modern full-stack stacks. Currently building Paibill, a hospitality inventory management platform, after delivering websites and internal systems for Children Might Foundation, cross-platform mobile apps at Igacode, and real-time learner dashboards at Posinnove, committed to aligning technology with real-world impact and continuous learning.";
