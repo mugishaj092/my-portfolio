@@ -43,7 +43,7 @@ export function AboutSection() {
         <div className="grid grid-cols-1 items-center gap-10 desktop:grid-cols-12 desktop:gap-16">
           <motion.div
             {...rise()}
-            className="mx-auto text-foreground desktop:order-2 desktop:col-span-5 desktop:mx-0 desktop:justify-self-center"
+            className="hidden text-foreground tablet:mx-auto tablet:block desktop:order-2 desktop:col-span-5 desktop:mx-0 desktop:justify-self-center"
           >
             <PortraitLogo className="h-72 w-72" />
           </motion.div>

@@ -1,4 +1,4 @@
-import type { IconType } from "react-icons"
+import type { ComponentType, SVGProps } from "react"
 import {
   SiAntdesign,
   SiAuth0,
@@ -31,9 +31,13 @@ import {
   SiTanstack,
   SiTypescript,
 } from "react-icons/si"
+import { PhotoshopIcon, ReactNativeIcon } from "@/components/ui/brand-icons"
 
-/** Maps a resume skill/stack label to its brand glyph. Labels with no reliable brand mark (SQL, React Native, Photoshop) are intentionally absent — callers fall back to a text-only chip. */
-export const TECH_ICONS: Record<string, IconType> = {
+/** Common shape react-icons and our hand-extracted brand marks both satisfy. */
+export type TechIcon = ComponentType<SVGProps<SVGSVGElement>>
+
+/** Maps a resume skill/stack label to its brand glyph. Labels with no reliable brand mark (SQL) are intentionally absent — callers fall back to a text-only chip. */
+export const TECH_ICONS: Record<string, TechIcon> = {
   JavaScript: SiJavascript,
   TypeScript: SiTypescript,
   Python: SiPython,
@@ -41,6 +45,7 @@ export const TECH_ICONS: Record<string, IconType> = {
   CSS: SiCss,
   "React.js": SiReact,
   React: SiReact,
+  "React Native": ReactNativeIcon,
   "Next.js": SiNextdotjs,
   "Node.js": SiNodedotjs,
   "Express.js": SiExpress,
@@ -65,4 +70,5 @@ export const TECH_ICONS: Record<string, IconType> = {
   Firebase: SiFirebase,
   Cloudinary: SiCloudinary,
   Figma: SiFigma,
+  Photoshop: PhotoshopIcon,
 }

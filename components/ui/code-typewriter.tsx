@@ -86,7 +86,7 @@ function CodeTypewriter({ lines }: { lines: CodeLine[] }) {
               {showCaret && (
                 <motion.span
                   aria-hidden
-                  className="ml-0.5 inline-block h-[1em] w-[2px] translate-y-[0.15em] bg-emerald-600 align-middle dark:bg-emerald-300"
+                  className="ml-0.5 inline-block h-[1em] w-0.5 translate-y-[0.15em] bg-emerald-600 align-middle dark:bg-emerald-300"
                   animate={{ opacity: [1, 1, 0, 0] }}
                   transition={{ duration: 1, repeat: Infinity, times: [0, 0.5, 0.5, 1] }}
                 />

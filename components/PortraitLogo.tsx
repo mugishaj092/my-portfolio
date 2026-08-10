@@ -155,7 +155,7 @@ export default function PortraitLogo({
   return (
     <motion.div
       ref={containerRef}
-      className={`group relative select-none [perspective:1200px] ${className}`}
+      className={`group relative select-none perspective-distant ${className}`}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       initial={{ opacity: 0, scale: 0.82, rotate: -6 }}
