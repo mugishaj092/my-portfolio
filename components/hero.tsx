@@ -1,4 +1,8 @@
+"use client"
+
+import { useRef } from "react"
 import Link from "next/link"
+import { motion, useReducedMotion, useScroll, useTransform } from "motion/react"
 import { FolderGit2, Hand, LaptopMinimal } from "lucide-react"
 
 import { HexagonBackground } from "@/components/animate-ui/components/backgrounds/hexagon"
@@ -18,6 +22,7 @@ const syntax = {
   punctuation: "text-neutral-600 dark:text-neutral-400",
 }
 
+const EASE = [0.16, 1, 0.3, 1] as const
 const HERO_BG_FADE = "linear-gradient(to bottom, black 70%, transparent 100%)"
 
 const codeLines: CodeLine[] = [
@@ -69,8 +74,31 @@ const codeLines: CodeLine[] = [
 ]
 
 export function Hero() {
+  const sectionRef = useRef<HTMLElement>(null)
+  const prefersReducedMotion = useReducedMotion()
+
+  // Content recedes gently as the visitor scrolls the hero out of view —
+  // tracked only across the section's own height, not the whole page.
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  })
+  const scrollOpacity = useTransform(scrollYProgress, [0, 1], [1, 0.2])
+  const scrollY = useTransform(scrollYProgress, [0, 1], [0, 50])
+
+  function rise(delay = 0) {
+    return {
+      initial: prefersReducedMotion ? false : { opacity: 0, y: 20 },
+      animate: { opacity: 1, y: 0 },
+      transition: { duration: 0.7, delay, ease: EASE },
+    }
+  }
+
   return (
-    <section className="relative isolate overflow-hidden pt-32 pb-section-mobile tablet:pt-40 tablet:pb-section-tablet desktop:pt-48 desktop:pb-section-desktop">
+    <section
+      ref={sectionRef}
+      className="relative isolate overflow-hidden pt-32 pb-section-mobile tablet:pt-40 tablet:pb-section-tablet desktop:pt-48 desktop:pb-section-desktop"
+    >
       <HexagonBackground
         aria-hidden
         hexagonSize={90}
@@ -78,33 +106,50 @@ export function Hero() {
         style={{ maskImage: HERO_BG_FADE, WebkitMaskImage: HERO_BG_FADE }}
       />
 
-      <div className="container-app grid grid-cols-1 items-center gap-12 desktop:grid-cols-12">
+      <motion.div
+        style={prefersReducedMotion ? undefined : { opacity: scrollOpacity, y: scrollY }}
+        className="container-app grid grid-cols-1 items-center gap-12 desktop:grid-cols-12"
+      >
         <div className="flex flex-col items-start gap-6 desktop:col-span-7">
-          <p className="flex items-center gap-2 text-headline-lg text-foreground/80">
+          <motion.p
+            {...rise()}
+            className="flex items-center gap-2 text-headline-lg text-foreground/80"
+          >
             Hello <Hand aria-hidden className="size-5 -rotate-12" />
-          </p>
-          <h1 className="text-headline-display text-foreground">
+          </motion.p>
+          <motion.h1
+            {...rise(0.08)}
+            className="text-headline-display text-foreground"
+          >
             I&apos;m {CONTACT_INFO.name}
-          </h1>
-          <p className="flex items-start gap-2 text-headline-sm text-foreground/80">
+          </motion.h1>
+          <motion.p
+            {...rise(0.16)}
+            className="flex items-start gap-2 text-headline-sm text-foreground/80"
+          >
             <LaptopMinimal aria-hidden className="mt-0.5 size-4 shrink-0" />
             <span>
               {CONTACT_INFO.title} · {CONTACT_INFO.location}
             </span>
-          </p>
-          <p className="max-w-prose text-body-lg text-muted-foreground">
-            {TAGLINE}
-          </p>
-          <Button
-            render={<a href={`mailto:${CONTACT_INFO.email}`} />}
-            nativeButton={false}
-            className="h-11 rounded-pill px-6"
+          </motion.p>
+          <motion.p
+            {...rise(0.24)}
+            className="max-w-prose text-body-lg text-muted-foreground"
           >
-            Say Hello
-          </Button>
+            {TAGLINE}
+          </motion.p>
+          <motion.div {...rise(0.32)}>
+            <Button
+              render={<a href={`mailto:${CONTACT_INFO.email}`} />}
+              nativeButton={false}
+              className="h-11 rounded-pill px-6"
+            >
+              Say Hello
+            </Button>
+          </motion.div>
         </div>
 
-        <div className="relative w-full desktop:col-span-5">
+        <motion.div {...rise(0.2)} className="relative w-full desktop:col-span-5">
           <div
             aria-hidden
             className="pointer-events-none absolute inset-0 -z-10 scale-110 rounded-full bg-primary/8 blur-3xl"
@@ -137,8 +182,8 @@ export function Hero() {
               </Button>
             </div>
           </LiquidGlassPanel>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   )
 }
