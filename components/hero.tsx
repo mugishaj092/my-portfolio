@@ -1,9 +1,10 @@
 import Link from "next/link"
-import { FolderGit2, Hand, LaptopMinimal, Play } from "lucide-react"
+import { FolderGit2, Hand, LaptopMinimal } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { CodeTypewriter, type CodeLine } from "@/components/ui/code-typewriter"
 import { LiquidGlassPanel } from "@/components/ui/liquid-glass-panel"
+import { RunProfileButton } from "@/components/ui/run-profile-button"
 import { CONTACT_INFO, TAGLINE } from "@/constant/resume"
 
 const syntax = {
@@ -84,7 +85,7 @@ export function Hero() {
           {TAGLINE}
         </p>
         <Button
-          render={<Link href="/contact" />}
+          render={<a href={`mailto:${CONTACT_INFO.email}`} />}
           nativeButton={false}
           className="h-11 rounded-pill px-6"
         >
@@ -113,14 +114,7 @@ export function Hero() {
           </pre>
 
           <div className="relative flex flex-wrap gap-3 border-t border-black/10 px-4 py-4 dark:border-white/10">
-            <Button
-              render={<Link href="/about" />}
-              nativeButton={false}
-              className="h-9 gap-1.5 rounded-pill px-4"
-            >
-              <Play />
-              Run Profile
-            </Button>
+            <RunProfileButton />
             <Button
               render={<Link href="/work" />}
               nativeButton={false}

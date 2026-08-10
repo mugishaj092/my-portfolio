@@ -3,8 +3,7 @@
  * Source of truth for the About, Experience, and Skills sections.
  */
 
-import { Certification, ContactInfo, EducationEntry, Experience, SkillCategory } from "@/types/resume";
-import { Reference } from "react";
+import { AboutContent, Certification, ContactInfo, EducationEntry, Experience, Reference, SkillCategory } from "@/types/resume";
 
 export const CONTACT_INFO: ContactInfo = {
   name: "Joseph Mugisha",
@@ -19,6 +18,16 @@ export const TAGLINE: string =
 
 export const SUMMARY: string =
   "Full-Stack and Mobile App Developer with 2+ years of experience building and shipping production applications across hospitality, nonprofit, education, and mobile sectors. Solid expertise in JavaScript/TypeScript, React, Next.js, Node.js/Express.js, and FastAPI within modern full-stack stacks. Currently building Paibill, a hospitality inventory management platform, after delivering websites and internal systems for Children Might Foundation, cross-platform mobile apps at Igacode, and real-time learner dashboards at Posinnove, committed to aligning technology with real-world impact and continuous learning.";
+
+export const ABOUT: AboutContent = {
+  title: "About Me",
+  paragraphs: [
+    "I'm Joseph Mugisha, a full-stack developer based in Kigali. Over the past two years I've shipped production software across hospitality, education, and nonprofit work — internal management systems, cross-platform mobile apps, and real-time dashboards, built with React, Next.js, Node.js, and FastAPI.",
+    "What keeps me interested isn't the stack — it's understanding the problem underneath a product, designing something people actually want to use, and building systems I'm not afraid to maintain a year from now.",
+    "I'm not chasing technology for its own sake. I want to build things that solve real problems, create real value, and are genuinely enjoyable to use — and I'm still finding better ways to get there.",
+  ],
+  currentFocus: "Currently building Paibill — a hospitality inventory platform.",
+};
 
 export const EXPERIENCE: Experience[] = [
   {

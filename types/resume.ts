@@ -40,3 +40,9 @@ export interface Reference {
     company: string;
     contactAvailable: boolean;
 }
+
+export interface AboutContent {
+    title: string;
+    paragraphs: string[];
+    currentFocus: string;
+}

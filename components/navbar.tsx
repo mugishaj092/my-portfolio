@@ -14,15 +14,17 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { scrollToHash } from "@/lib/scroll-to-hash"
 
 const primaryLinks = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
+  { label: "About", href: "/#about" },
   { label: "Work", href: "/work" },
   { label: "Blog", href: "/blog" },
 ]
 
 const moreLinks = [
+  { label: "Resume", href: "/resume" },
   { label: "Stack", href: "/stack" },
   { label: "Playground", href: "/playground" },
   { label: "Contact", href: "/contact" },
@@ -62,6 +64,7 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
+                onClick={(event) => scrollToHash(event, link.href)}
                 className="rounded-pill px-3.5 py-1.5 text-foreground/80 transition-colors hover:text-foreground"
               >
                 {link.label}
@@ -132,7 +135,12 @@ export function Navbar() {
               {primaryLinks.map((link) => (
                 <DropdownMenuItem
                   key={link.href}
-                  render={<Link href={link.href} />}
+                  render={
+                    <Link
+                      href={link.href}
+                      onClick={(event) => scrollToHash(event, link.href)}
+                    />
+                  }
                 >
                   {link.label}
                 </DropdownMenuItem>
