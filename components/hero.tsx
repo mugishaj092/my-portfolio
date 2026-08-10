@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { FolderGit2, Hand, LaptopMinimal } from "lucide-react"
 
+import { HexagonBackground } from "@/components/animate-ui/components/backgrounds/hexagon"
 import { Button } from "@/components/ui/button"
 import { CodeTypewriter, type CodeLine } from "@/components/ui/code-typewriter"
 import { LiquidGlassPanel } from "@/components/ui/liquid-glass-panel"
@@ -16,6 +17,8 @@ const syntax = {
   string: "text-emerald-700 dark:text-emerald-300",
   punctuation: "text-neutral-600 dark:text-neutral-400",
 }
+
+const HERO_BG_FADE = "linear-gradient(to bottom, black 70%, transparent 100%)"
 
 const codeLines: CodeLine[] = [
   [{ text: "// Welcome to my workspace", className: syntax.comment }],
@@ -67,65 +70,74 @@ const codeLines: CodeLine[] = [
 
 export function Hero() {
   return (
-    <section className="container-app grid grid-cols-1 items-center gap-12 pt-32 pb-section-mobile tablet:pt-40 tablet:pb-section-tablet desktop:grid-cols-12 desktop:pt-48 desktop:pb-section-desktop">
-      <div className="flex flex-col items-start gap-6 desktop:col-span-7">
-        <p className="flex items-center gap-2 text-headline-lg text-foreground/80">
-          Hello <Hand aria-hidden className="size-5 -rotate-12" />
-        </p>
-        <h1 className="text-headline-display text-foreground">
-          I&apos;m {CONTACT_INFO.name}
-        </h1>
-        <p className="flex items-start gap-2 text-headline-sm text-foreground/80">
-          <LaptopMinimal aria-hidden className="mt-0.5 size-4 shrink-0" />
-          <span>
-            {CONTACT_INFO.title} · {CONTACT_INFO.location}
-          </span>
-        </p>
-        <p className="max-w-prose text-body-lg text-muted-foreground">
-          {TAGLINE}
-        </p>
-        <Button
-          render={<a href={`mailto:${CONTACT_INFO.email}`} />}
-          nativeButton={false}
-          className="h-11 rounded-pill px-6"
-        >
-          Say Hello
-        </Button>
-      </div>
+    <section className="relative isolate overflow-hidden pt-32 pb-section-mobile tablet:pt-40 tablet:pb-section-tablet desktop:pt-48 desktop:pb-section-desktop">
+      <HexagonBackground
+        aria-hidden
+        hexagonSize={90}
+        className="absolute inset-0 -z-20"
+        style={{ maskImage: HERO_BG_FADE, WebkitMaskImage: HERO_BG_FADE }}
+      />
 
-      <div className="relative w-full desktop:col-span-5">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 -z-10 scale-110 rounded-full bg-primary/8 blur-3xl"
-        />
-
-        <LiquidGlassPanel>
-          <div className="relative flex items-center gap-1.5 border-b border-black/10 px-4 py-3 dark:border-white/10">
-            <span className="size-2.5 rounded-pill bg-red-500" />
-            <span className="size-2.5 rounded-pill bg-yellow-500" />
-            <span className="size-2.5 rounded-pill bg-green-500" />
-            <span className="ml-2 text-mono-caption text-neutral-500 dark:text-neutral-400">
-              portfolio.tsx
+      <div className="container-app grid grid-cols-1 items-center gap-12 desktop:grid-cols-12">
+        <div className="flex flex-col items-start gap-6 desktop:col-span-7">
+          <p className="flex items-center gap-2 text-headline-lg text-foreground/80">
+            Hello <Hand aria-hidden className="size-5 -rotate-12" />
+          </p>
+          <h1 className="text-headline-display text-foreground">
+            I&apos;m {CONTACT_INFO.name}
+          </h1>
+          <p className="flex items-start gap-2 text-headline-sm text-foreground/80">
+            <LaptopMinimal aria-hidden className="mt-0.5 size-4 shrink-0" />
+            <span>
+              {CONTACT_INFO.title} · {CONTACT_INFO.location}
             </span>
-          </div>
+          </p>
+          <p className="max-w-prose text-body-lg text-muted-foreground">
+            {TAGLINE}
+          </p>
+          <Button
+            render={<a href={`mailto:${CONTACT_INFO.email}`} />}
+            nativeButton={false}
+            className="h-11 rounded-pill px-6"
+          >
+            Say Hello
+          </Button>
+        </div>
 
-          <pre className="relative overflow-x-auto px-4 py-4 text-mono-tag">
-            <CodeTypewriter lines={codeLines} />
-          </pre>
+        <div className="relative w-full desktop:col-span-5">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 -z-10 scale-110 rounded-full bg-primary/8 blur-3xl"
+          />
 
-          <div className="relative flex flex-wrap gap-3 border-t border-black/10 px-4 py-4 dark:border-white/10">
-            <RunProfileButton />
-            <Button
-              render={<Link href="/work" />}
-              nativeButton={false}
-              variant="glass"
-              className="h-9 gap-1.5 rounded-pill border-black/15 bg-black/5 px-4 text-neutral-900 hover:bg-black/10 dark:border-white/15 dark:bg-white/5 dark:text-neutral-100 dark:hover:bg-white/10"
-            >
-              <FolderGit2 />
-              View Projects
-            </Button>
-          </div>
-        </LiquidGlassPanel>
+          <LiquidGlassPanel>
+            <div className="relative flex items-center gap-1.5 border-b border-black/10 px-4 py-3 dark:border-white/10">
+              <span className="size-2.5 rounded-pill bg-red-500" />
+              <span className="size-2.5 rounded-pill bg-yellow-500" />
+              <span className="size-2.5 rounded-pill bg-green-500" />
+              <span className="ml-2 text-mono-caption text-neutral-500 dark:text-neutral-400">
+                portfolio.tsx
+              </span>
+            </div>
+
+            <pre className="relative overflow-x-auto px-4 py-4 text-mono-tag">
+              <CodeTypewriter lines={codeLines} />
+            </pre>
+
+            <div className="relative flex flex-wrap gap-3 border-t border-black/10 px-4 py-4 dark:border-white/10">
+              <RunProfileButton />
+              <Button
+                render={<Link href="/work" />}
+                nativeButton={false}
+                variant="glass"
+                className="h-9 gap-1.5 rounded-pill border-black/15 bg-black/5 px-4 text-neutral-900 hover:bg-black/10 dark:border-white/15 dark:bg-white/5 dark:text-neutral-100 dark:hover:bg-white/10"
+              >
+                <FolderGit2 />
+                View Projects
+              </Button>
+            </div>
+          </LiquidGlassPanel>
+        </div>
       </div>
     </section>
   )
