@@ -5,6 +5,7 @@ import { AnimatePresence, motion, useReducedMotion } from "motion/react"
 import { ChevronDown } from "lucide-react"
 
 import PortraitLogo from "@/components/PortraitLogo"
+import { SkillsMarquee } from "@/components/skills-marquee"
 import { Button } from "@/components/ui/button"
 import { ABOUT } from "@/constant/resume"
 
@@ -98,6 +99,10 @@ export function AboutSection() {
             </Button>
           </div>
         </div>
+
+        <motion.div {...rise(0.32)} className="mt-14">
+          <SkillsMarquee />
+        </motion.div>
       </div>
     </section>
   )

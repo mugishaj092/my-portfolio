@@ -68,7 +68,7 @@ export const EXPERIENCE: Experience[] = [
 export const SKILLS: SkillCategory[] = [
   {
     category: "Programming Languages",
-    items: ["JavaScript", "TypeScript", "Python", "SQL", "HTML", "CSS"],
+    items: ["JavaScript", "TypeScript", "Python"],
   },
   {
     category: "Libraries & Frameworks",
@@ -81,7 +81,7 @@ export const SKILLS: SkillCategory[] = [
       "FastAPI",
       "Prisma",
       "Tailwind CSS",
-      "NextUI",
+      "HeroUI",
       "Ant Design",
       "Shadcn UI",
       "Framer Motion",
@@ -96,9 +96,7 @@ export const SKILLS: SkillCategory[] = [
       "MySQL",
       "MongoDB",
       "Redis",
-      "REST APIs",
       "GraphQL",
-      "WebSockets",
       "Socket.IO",
     ],
   },

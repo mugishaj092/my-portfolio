@@ -11,6 +11,7 @@ import {
   SiFirebase,
   SiFramer,
   SiGraphql,
+  SiHeroui,
   SiHtml5,
   SiJavascript,
   SiMongodb,
@@ -31,7 +32,7 @@ import {
   SiTypescript,
 } from "react-icons/si"
 
-/** Maps a resume skill/stack label to its brand glyph. Labels with no reliable brand mark (SQL, REST APIs, WebSockets, React Native, NextUI, Photoshop) are intentionally absent — callers fall back to a text-only chip. */
+/** Maps a resume skill/stack label to its brand glyph. Labels with no reliable brand mark (SQL, React Native, Photoshop) are intentionally absent — callers fall back to a text-only chip. */
 export const TECH_ICONS: Record<string, IconType> = {
   JavaScript: SiJavascript,
   TypeScript: SiTypescript,
@@ -48,6 +49,7 @@ export const TECH_ICONS: Record<string, IconType> = {
   "Tailwind CSS": SiTailwindcss,
   "Ant Design": SiAntdesign,
   "Shadcn UI": SiShadcnui,
+  HeroUI: SiHeroui,
   "Framer Motion": SiFramer,
   "Redux Toolkit": SiRedux,
   "TanStack Query": SiTanstack,
