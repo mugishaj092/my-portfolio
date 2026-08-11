@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
+import { ExperienceList } from "@/components/experience";
 import { GlassCard } from "@/components/ui/glass-card";
 import { TechChip } from "@/components/ui/tech-chip";
 import { TECH_ICONS } from "@/components/ui/tech-icons";
 import {
   CERTIFICATIONS,
   EDUCATION,
-  EXPERIENCE,
   REFERENCES,
   SKILLS,
   SUMMARY,
@@ -41,39 +41,8 @@ export default function ResumePage() {
 
         <div className="mt-16">
           <h2 className="text-headline-md text-foreground">Experience</h2>
-          <div className="mt-6 flex flex-col gap-4">
-            {EXPERIENCE.map((job) => (
-              <GlassCard
-                key={`${job.company}-${job.role}`}
-                className="p-6 tablet:p-8"
-              >
-                <div className="flex flex-col gap-1 tablet:flex-row tablet:items-baseline tablet:justify-between">
-                  <h3 className="text-headline-sm text-foreground">
-                    {job.role} · {job.company}
-                  </h3>
-                  <span className="text-mono-caption text-muted-foreground">
-                    {job.startDate} — {job.endDate}
-                  </span>
-                </div>
-                <p className="mt-1 text-label-lg text-muted-foreground">
-                  {job.location}
-                </p>
-                <ul className="mt-4 flex flex-col gap-2">
-                  {job.highlights.map((point, index) => (
-                    <li
-                      key={index}
-                      className="flex items-start gap-2 text-body-md text-muted-foreground"
-                    >
-                      <span
-                        aria-hidden
-                        className="mt-2.5 size-1 shrink-0 rounded-pill bg-foreground/40"
-                      />
-                      <span>{point}</span>
-                    </li>
-                  ))}
-                </ul>
-              </GlassCard>
-            ))}
+          <div className="mt-6">
+            <ExperienceList />
           </div>
         </div>
 

@@ -13,6 +13,10 @@ export interface Experience {
     endDate: string;
     location: string;
     highlights: string[];
+    /** Optional — technologies used in this role. Leave unset until confirmed; the UI shows an "add tech stack" placeholder instead of guessing. */
+    techStack?: string[];
+    /** Optional — the company's real website. Leave unset until confirmed; no link renders without one. */
+    url?: string;
 }
 
 export interface SkillCategory {

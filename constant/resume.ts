@@ -40,6 +40,8 @@ export const EXPERIENCE: Experience[] = [
       "Developed and maintained the organization's website and internal management systems, improving operational efficiency and digital service delivery.",
       "Designed and implemented scalable frontend and backend features, integrating secure APIs, databases, and authentication systems.",
     ],
+    techStack: ["Next.js", "Figma", "Prisma"],
+    url: "http://childrenmightfoundation.org/",
   },
   {
     role: "Frontend Developer",
@@ -51,6 +53,8 @@ export const EXPERIENCE: Experience[] = [
       "Built and optimized reusable frontend components while collaborating with backend teams to integrate APIs and application features.",
       "Developed real-time dashboards and interactive experiences to improve learner and trainer engagement.",
     ],
+    techStack: ["Next.js", "Socket.IO", "Figma"],
+    url: "https://posinnove.com/",
   },
   {
     role: "Full-Stack Apprentice",
@@ -62,6 +66,8 @@ export const EXPERIENCE: Experience[] = [
       "Developed and tested full-stack applications, writing unit and integration tests to ensure reliability and maintainability.",
       "Built a full-stack blog application, implementing features across both frontend and backend components.",
     ],
+    techStack: ["Express.js", "React.js", "Socket.IO"],
+    url: "https://www.andela.com/",
   },
 ];
 

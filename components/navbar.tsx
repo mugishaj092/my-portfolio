@@ -19,6 +19,7 @@ import { scrollToHash } from "@/lib/scroll-to-hash"
 const primaryLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/#about" },
+  { label: "Experience", href: "/#experience" },
   { label: "Work", href: "/work" },
   { label: "Blog", href: "/blog" },
 ]
