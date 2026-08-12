@@ -4,8 +4,8 @@ import { useState } from "react"
 import { AnimatePresence, motion, useReducedMotion } from "motion/react"
 import { ChevronDown } from "lucide-react"
 
-import PortraitLogo from "@/components/PortraitLogo"
 import { SkillsMarquee } from "@/components/skills-marquee"
+import { TechStackFlow } from "@/components/tech-stack-flow"
 import { Button } from "@/components/ui/button"
 import { ABOUT } from "@/constant/resume"
 
@@ -43,9 +43,9 @@ export function AboutSection() {
         <div className="grid grid-cols-1 items-center gap-10 desktop:grid-cols-12 desktop:gap-16">
           <motion.div
             {...rise()}
-            className="hidden text-foreground tablet:mx-auto tablet:block desktop:order-2 desktop:col-span-5 desktop:mx-0 desktop:justify-self-center"
+            className="hidden w-full text-foreground tablet:mx-auto tablet:block tablet:max-w-125 desktop:order-2 desktop:col-span-5 desktop:mx-0 desktop:max-w-none desktop:justify-self-center"
           >
-            <PortraitLogo className="h-72 w-72" />
+            <TechStackFlow />
           </motion.div>
 
           <div className="desktop:order-1 desktop:col-span-7">
