@@ -4,6 +4,7 @@ import Image from "next/image"
 import { motion, useReducedMotion } from "motion/react"
 
 import { CircuitCard } from "@/components/ui/circuit-card"
+import { TechOverflowBadge } from "@/components/ui/tech-overflow-badge"
 import { PROJECTS } from "@/constant/resume"
 
 const EASE = [0.16, 1, 0.3, 1] as const
@@ -75,17 +76,7 @@ export function ProjectsSection() {
                   </span>
                 ))}
                 {project.techStack.length > MAX_VISIBLE_TECH && (
-                  <span className="group/tooltip relative shrink-0">
-                    <span className="cursor-default rounded-pill border border-border px-2.5 py-1 text-mono-caption text-muted-foreground">
-                      +{project.techStack.length - MAX_VISIBLE_TECH}
-                    </span>
-                    <span
-                      role="tooltip"
-                      className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 w-max max-w-48 -translate-x-1/2 rounded-lg bg-foreground px-3 py-1.5 text-mono-caption text-background opacity-0 shadow-lg transition-opacity duration-150 group-hover/tooltip:opacity-100"
-                    >
-                      {project.techStack.slice(MAX_VISIBLE_TECH).join(", ")}
-                    </span>
-                  </span>
+                  <TechOverflowBadge items={project.techStack.slice(MAX_VISIBLE_TECH)} />
                 )}
               </div>
             )}

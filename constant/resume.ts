@@ -5,6 +5,7 @@
 
 import paibillLogo from "@/assets/image/Paibill_Logo.png";
 import portfolioLogo from "@/assets/image/projects/portfolio.png";
+import spareYacuLogo from "@/assets/image/projects/spare_yacu.png";
 import { AboutContent, Certification, ContactInfo, EducationEntry, Experience, ProjectEntry, Reference, SkillCategory } from "@/types/resume";
 
 export const CONTACT_INFO: ContactInfo = {
@@ -92,6 +93,15 @@ export const PROJECTS: ProjectEntry[] = [
     imageFit: "cover",
     techStack: ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
     githubUrl: "https://github.com/mugishaj092/my-portfolio",
+  },
+  {
+    name: "SpareYacu",
+    description:
+      "An e-commerce platform for genuine auto parts and accessories, with fast delivery and secure payment.",
+    image: spareYacuLogo,
+    imageFit: "cover",
+    techStack: ["Next.js", "PostgreSQL", "Prisma", "Shadcn UI", "Cloudinary"],
+    liveUrl: "https://spare-yacu.vercel.app",
   },
 ];
 
