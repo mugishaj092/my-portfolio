@@ -1,3 +1,5 @@
+import type { StaticImageData } from "next/image";
+
 export interface ContactInfo {
     name: string;
     title: string;
@@ -49,4 +51,19 @@ export interface AboutContent {
     title: string;
     paragraphs: string[];
     currentFocus: string;
+}
+
+export interface ProjectEntry {
+    name: string;
+    description: string;
+    /** Logo/screenshot shown on the card — a StaticImageData from a local import. */
+    image: StaticImageData;
+    /** How the image fills its frame: "contain" (default) pads a square/transparent logo so nothing is cropped; "cover" fills the frame edge-to-edge, cropping as needed — use for wide screenshots. */
+    imageFit?: "contain" | "cover";
+    /** Optional — technologies used in this project. Leave unset until confirmed; no chips render without it. */
+    techStack?: string[];
+    /** Optional — live/deployed URL. Leave unset until confirmed; no "Live" button renders without one. */
+    liveUrl?: string;
+    /** Optional — public repo URL. Leave unset until confirmed; no "GitHub" button renders without one. */
+    githubUrl?: string;
 }

@@ -10,6 +10,7 @@ import cmfLogo from "@/assets/image/cmf_logo.png"
 import posinnoveLogo from "@/assets/image/posinnove_tech_logo.jpeg"
 import { GlassCard } from "@/components/ui/glass-card"
 import { TECH_ICONS, type TechIcon } from "@/components/ui/tech-icons"
+import { TiltCard } from "@/components/ui/tilt-card"
 import { EXPERIENCE } from "@/constant/resume"
 
 const EASE = [0.16, 1, 0.3, 1] as const
@@ -111,7 +112,8 @@ export function ExperienceList() {
               )}
             </div>
 
-            <GlassCard className="mb-4 flex-1 p-5 transition-colors hover:border-glass-highlight tablet:p-6">
+            <TiltCard className="mb-4 flex-1 rounded-lg">
+              <GlassCard className="h-full p-5 transition-colors hover:border-glass-highlight tablet:p-6">
               <div className="flex flex-col gap-1 tablet:flex-row tablet:items-start tablet:justify-between tablet:gap-4">
                 <div>
                   <h3 className="text-headline-sm text-foreground">
@@ -212,7 +214,8 @@ export function ExperienceList() {
                   </motion.div>
                 )}
               </AnimatePresence>
-            </GlassCard>
+              </GlassCard>
+            </TiltCard>
           </motion.div>
         )
       })}

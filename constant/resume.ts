@@ -1,9 +1,11 @@
 /**
  * Resume / portfolio data.
- * Source of truth for the About, Experience, and Skills sections.
+ * Source of truth for the About, Experience, Projects, and Skills sections.
  */
 
-import { AboutContent, Certification, ContactInfo, EducationEntry, Experience, Reference, SkillCategory } from "@/types/resume";
+import paibillLogo from "@/assets/image/Paibill_Logo.png";
+import portfolioLogo from "@/assets/image/projects/portfolio.png";
+import { AboutContent, Certification, ContactInfo, EducationEntry, Experience, ProjectEntry, Reference, SkillCategory } from "@/types/resume";
 
 export const CONTACT_INFO: ContactInfo = {
   name: "Joseph Mugisha",
@@ -68,6 +70,28 @@ export const EXPERIENCE: Experience[] = [
     ],
     techStack: ["Express.js", "React.js", "Socket.IO"],
     url: "https://www.andela.com/",
+  },
+];
+
+export const PROJECTS: ProjectEntry[] = [
+  {
+    name: "Paibill",
+    description:
+      "A hospitality inventory management platform for tracking stock, purchases, and billing in real time.",
+    image: paibillLogo,
+    techStack: ["React", "Next.js", "FastAPI"],
+    // Dummy placeholders — swap for the real URLs once Paibill is public.
+    liveUrl: "#",
+    githubUrl: "#",
+  },
+  {
+    name: "Portfolio",
+    description:
+      "This site — a personal portfolio built to showcase my work, experience, and skills.",
+    image: portfolioLogo,
+    imageFit: "cover",
+    techStack: ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
+    githubUrl: "https://github.com/mugishaj092/my-portfolio",
   },
 ];
 
