@@ -6,6 +6,8 @@ export interface ContactInfo {
     location: string;
     phone: string;
     email: string;
+    /** Optional — GitHub profile URL. Leave unset until confirmed; no link renders without one. */
+    githubUrl?: string;
 }
 
 export interface Experience {

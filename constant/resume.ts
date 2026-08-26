@@ -14,6 +14,7 @@ export const CONTACT_INFO: ContactInfo = {
   location: "Kigali, Rwanda",
   phone: "+250 792 418 795",
   email: "mugishajoseph092@gmail.com",
+  githubUrl: "https://github.com/mugishaj092",
 };
 
 export const TAGLINE: string =

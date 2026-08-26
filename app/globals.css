@@ -303,6 +303,20 @@
     }
 }
 
+/* Short-radius live pulse — like animate-ping, but the ring only grows to
+   1.6x instead of 2x, so it reads as a tight "live" cue hugging the badge
+   it surrounds rather than a wave sweeping past it. */
+@keyframes pulse-tight {
+    0% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+    100% {
+        transform: scale(1.6);
+        opacity: 0;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     .liquid-glass-shimmer {
         animation: none;
