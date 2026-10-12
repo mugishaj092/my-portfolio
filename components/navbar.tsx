@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { ChevronDown, Menu, Search } from "lucide-react"
+import { Menu } from "lucide-react"
 
 import logoLight from "@/assets/logo-light.svg"
 import logoDark from "@/assets/logo-dark.svg"
@@ -14,14 +14,14 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { NavDesktop } from "@/components/nav-desktop"
 import { scrollToHash } from "@/lib/scroll-to-hash"
 
 const primaryLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/#about" },
   { label: "Experience", href: "/#experience" },
-  { label: "Work", href: "/work" },
-  { label: "Blog", href: "/blog" },
+  { label: "Projects", href: "/#projects" },
 ]
 
 const moreLinks = [
@@ -60,61 +60,7 @@ export function Navbar() {
         </Link>
 
         <nav className="hidden items-center gap-2 desktop:flex">
-          <div className="glass-nav flex items-center gap-0.5 rounded-pill px-1.5 py-1.5 text-label-lg backdrop-blur-(--nav-blur) backdrop-saturate-[1.8]">
-            {primaryLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={(event) => scrollToHash(event, link.href)}
-                className="rounded-pill px-3.5 py-1.5 text-foreground/80 transition-colors hover:text-foreground"
-              >
-                {link.label}
-              </Link>
-            ))}
-
-            <DropdownMenu>
-              <DropdownMenuTrigger
-                render={
-                  <button
-                    type="button"
-                    className="flex items-center gap-1 rounded-pill border border-glass-border px-3.5 py-1.5 text-foreground/80 outline-none transition-colors hover:text-foreground aria-expanded:text-foreground"
-                  />
-                }
-              >
-                More
-                <ChevronDown className="size-3.5" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                {moreLinks.map((link) => (
-                  <DropdownMenuItem
-                    key={link.href}
-                    render={<Link href={link.href} />}
-                  >
-                    {link.label}
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </div>
-
-          <Link
-            href="/contact"
-            className="rounded-pill border border-glass-border bg-secondary px-5 py-2.5 text-label-lg text-secondary-foreground transition-colors hover:bg-muted"
-          >
-            Book a Call
-          </Link>
-
-          <div className="relative">
-            <div aria-hidden className={glowOrbClassName} />
-            <Button
-              variant="glass"
-              size="icon"
-              className={glassOrbButtonClassName}
-              aria-label="Search"
-            >
-              <Search className="size-4" />
-            </Button>
-          </div>
+          <NavDesktop links={primaryLinks} />
         </nav>
 
         <div className="relative desktop:hidden">

@@ -172,7 +172,7 @@ export function Hero() {
             <div className="relative flex flex-wrap gap-3 border-t border-black/10 px-4 py-4 dark:border-white/10">
               <RunProfileButton />
               <Button
-                render={<Link href="/work" />}
+                render={<Link href="/#projects" />}
                 nativeButton={false}
                 variant="glass"
                 className="h-9 gap-1.5 rounded-pill border-black/15 bg-black/5 px-4 text-neutral-900 hover:bg-black/10 dark:border-white/15 dark:bg-white/5 dark:text-neutral-100 dark:hover:bg-white/10"
