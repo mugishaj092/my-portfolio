@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/provider/theme-provider";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { SocialDock } from "@/components/social-dock";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
 const geistSans = Geist({
@@ -45,6 +46,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
               <div className="absolute top-24 -right-32 size-95 rounded-full bg-accent/6 blur-[110px]" />
             </div>
             <Navbar />
+            <SocialDock />
             {children}
             <Footer />
           </TooltipProvider>
