@@ -3,11 +3,12 @@
 import { useRef } from "react"
 import Link from "next/link"
 import { motion, useReducedMotion, useScroll, useTransform } from "motion/react"
-import { FolderGit2, Hand, LaptopMinimal } from "lucide-react"
+import { Download, FolderGit2, Hand, LaptopMinimal } from "lucide-react"
 
 import { HexagonBackground } from "@/components/animate-ui/components/backgrounds/hexagon"
 import { Button } from "@/components/ui/button"
 import { CodeTypewriter, type CodeLine } from "@/components/ui/code-typewriter"
+import { IconSlideButton } from "@/components/ui/icon-slide-button"
 import { LiquidGlassPanel } from "@/components/ui/liquid-glass-panel"
 import { RunProfileButton } from "@/components/ui/run-profile-button"
 import { CONTACT_INFO, TAGLINE } from "@/constant/resume"
@@ -138,14 +139,17 @@ export function Hero() {
           >
             {TAGLINE}
           </motion.p>
-          <motion.div {...rise(0.32)}>
-            <Button
-              render={<a href={`mailto:${CONTACT_INFO.email}`} />}
-              nativeButton={false}
-              className="h-11 rounded-pill px-6"
-            >
+          <motion.div {...rise(0.32)} className="flex flex-wrap items-center gap-3">
+            <IconSlideButton href={`mailto:${CONTACT_INFO.email}`}>
               Say Hello
-            </Button>
+            </IconSlideButton>
+            <IconSlideButton
+              href="/resume"
+              icon={<Download size={16} />}
+              className="border-glass-border bg-secondary text-secondary-foreground hover:bg-secondary"
+            >
+              Resume
+            </IconSlideButton>
           </motion.div>
         </div>
 
