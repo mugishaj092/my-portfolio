@@ -12,11 +12,13 @@ import {
   Link2,
   ListChecks,
   MessageSquare,
-  Search,
   Star,
 } from "lucide-react"
 
+import { FaGithub } from "react-icons/fa"
+
 import { cn } from "@/lib/utils"
+import { CONTACT_INFO } from "@/constant/resume"
 import { scrollToHash } from "@/lib/scroll-to-hash"
 
 type IconComponent = ComponentType<{
@@ -217,13 +219,15 @@ export function NavDesktop({ links }: { links: NavLink[] }) {
         Book a Call
       </Link>
 
-      <button
-        type="button"
-        aria-label="Search"
+      <Link
+        href={CONTACT_INFO.githubUrl ?? "#"}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="GitHub"
         className="glass-nav flex size-11 shrink-0 items-center justify-center rounded-full border border-glass-border text-foreground/70 backdrop-blur-(--nav-blur) backdrop-saturate-[1.8] transition-colors hover:text-foreground"
       >
-        <Search className="size-4" />
-      </button>
+        <FaGithub className="size-4" aria-hidden />
+      </Link>
     </div>
   )
 }
