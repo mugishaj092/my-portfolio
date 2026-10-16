@@ -6,11 +6,11 @@ import { AnimatePresence, motion, useReducedMotion } from "motion/react"
 import type { ComponentType } from "react"
 import {
   ArrowUpRight,
+  Award,
   BookOpen,
   ChevronDown,
-  CreditCard,
+  Layers,
   Link2,
-  ListChecks,
   MessageSquare,
   Star,
 } from "lucide-react"
@@ -46,30 +46,30 @@ type ListItem = {
 const featureCards: FeatureCard[] = [
   {
     label: "Guestbook",
-    description: "Let me know you were here",
+    description: "Leave a message.",
     href: "/guestbook",
     icon: BookOpen,
   },
   {
-    label: "Bucket List",
-    description: "Dreams with a deadline",
-    href: "/bucket-list",
-    icon: ListChecks,
+    label: "Tech Stack",
+    description: "Tools of my trade.",
+    href: "/tech-stack",
+    icon: Layers,
   },
 ]
 
 const listItems: ListItem[] = [
   {
-    label: "Links",
-    description: "All my links are here",
+    label: "Connect With Me",
+    description: "Let's connect.",
     href: "/links",
     icon: Link2,
   },
   {
-    label: "Attribution",
-    description: "Journey to create this site",
-    href: "/attribution",
-    icon: CreditCard,
+    label: "Certifications",
+    description: "Skills, verified.",
+    href: "/certifications",
+    icon: Award,
   },
 ]
 
@@ -325,7 +325,6 @@ function FeatureTile({
   card: FeatureCard
   onNavigate: () => void
 }) {
-  const items = ["🏔️ Hike Kilimanjaro", "🌊 Learn to surf", "🎸 Play live"]
   return (
     <Link
       href={card.href}
@@ -333,19 +332,18 @@ function FeatureTile({
       className="group relative flex h-full min-h-36 flex-col justify-end overflow-hidden rounded-2xl p-4 text-white outline-none focus-visible:ring-2 focus-visible:ring-ring"
     >
       {/* Background */}
-      <div className="absolute inset-0 bg-[linear-gradient(160deg,#0a0f0a_0%,#0a1a0d_40%,#080f08_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(160deg,#0a0a0a_0%,#141414_40%,#080808_100%)]" />
 
-      {/* Floating checklist decoration */}
+      {/* Floating tech chips decoration */}
       <div aria-hidden className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-3 right-3 w-24 space-y-1.5 rounded-xl border border-white/10 bg-white/5 p-2.5 backdrop-blur-sm transition-transform duration-500 group-hover:-translate-y-1">
-          {items.map((item, i) => (
-            <div key={i} className="flex items-center gap-1.5">
-              <div className={`size-3 shrink-0 rounded-sm border ${i < 2 ? "border-emerald-400/60 bg-emerald-400/30" : "border-white/20"}`} />
-              <div className="h-1 flex-1 rounded-full bg-white/20" />
-            </div>
+        <div className="absolute top-3 right-3 grid w-24 grid-cols-2 gap-1.5 rounded-xl border border-white/10 bg-white/5 p-2 backdrop-blur-sm transition-transform duration-500 group-hover:-translate-y-1 group-hover:rotate-1">
+          {["React", "Next", "FastAPI", "SQL"].map((tech) => (
+            <span key={tech} className="truncate rounded-md border border-white/10 bg-white/10 px-1.5 py-1 text-center font-mono text-[8px] text-white/70">
+              {tech}
+            </span>
           ))}
         </div>
-        <ListChecks className="absolute -top-2 -left-2 size-20 -rotate-12 text-emerald-500/10 transition-transform duration-500 group-hover:rotate-0 group-hover:scale-110" />
+        <Layers className="absolute -top-2 -left-2 size-20 -rotate-12 text-white/[0.06] transition-transform duration-500 group-hover:rotate-0 group-hover:scale-110" />
       </div>
 
       {/* Bottom overlay */}
