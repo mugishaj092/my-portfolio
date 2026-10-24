@@ -29,7 +29,7 @@ export function TechOverflowBadge({ items }: TechOverflowBadgeProps) {
         // corruption in Chromium, and a card that keeps tilting under a
         // tooltip you're trying to read is bad UX regardless.
         onMouseMove={(event) => event.stopPropagation()}
-        className="shrink-0 cursor-default rounded-pill border border-border px-2.5 py-1 text-mono-caption text-muted-foreground outline-none transition-colors hover:border-primary/50 hover:text-foreground focus-visible:border-primary/50 focus-visible:text-foreground"
+        className="inline-flex h-7 shrink-0 cursor-default items-center rounded-pill border border-border px-2.5 text-mono-caption text-muted-foreground outline-none transition-colors hover:border-primary/50 hover:text-foreground focus-visible:border-primary/50 focus-visible:text-foreground"
       >
         +{items.length}
       </TooltipTrigger>

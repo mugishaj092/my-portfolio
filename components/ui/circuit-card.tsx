@@ -3,7 +3,7 @@
 import type React from "react"
 import { useRef, useState } from "react"
 import { motion, useMotionValue, useReducedMotion, useSpring, useTransform } from "motion/react"
-import { Globe } from "lucide-react"
+import { Download, Globe } from "lucide-react"
 import { SiGithub } from "react-icons/si"
 
 import { cn } from "@/lib/utils"
@@ -16,6 +16,12 @@ export interface CircuitCardProps {
   liveUrl?: string
   /** Repo URL — shown as a glass "GitHub" button over the card, revealed on hover. */
   githubUrl?: string
+  /** File URL — shown as a glass download button next to the others, revealed on hover. */
+  downloadUrl?: string
+  /** Accessible label/tooltip for the downloadUrl button. */
+  downloadLabel?: string
+  /** Accessible label/tooltip for the liveUrl button. Defaults to the live-site wording. */
+  liveLabel?: string
   className?: string
   containerClassName?: string
   /** Max cursor-tracked tilt in degrees at the card's edge. */
@@ -34,6 +40,9 @@ export function CircuitCard({
   children,
   liveUrl,
   githubUrl,
+  liveLabel = "Open live site",
+  downloadUrl,
+  downloadLabel = "Download",
   className,
   containerClassName,
   maxTilt = 5,
@@ -91,7 +100,7 @@ export function CircuitCard({
       }}
       className={cn("group relative", containerClassName)}
     >
-      <div className="relative overflow-hidden rounded-2xl p-px">
+      <div className="relative h-full overflow-hidden rounded-2xl p-px">
         <motion.div
           aria-hidden
           className="absolute inset-[-60%]"
@@ -123,7 +132,7 @@ export function CircuitCard({
         >
           {children}
 
-          {(liveUrl || githubUrl) && (
+          {(liveUrl || githubUrl || downloadUrl) && (
             <motion.div
               className="absolute right-3 top-3 flex items-center gap-2"
               initial={false}
@@ -136,11 +145,22 @@ export function CircuitCard({
                   href={liveUrl}
                   target="_blank"
                   rel="noreferrer"
-                  aria-label="Open live site"
-                  title="Live"
+                  aria-label={liveLabel}
+                  title={liveLabel}
                   className="glass inline-flex size-8 items-center justify-center rounded-full text-foreground backdrop-blur-(--backdrop-blur) backdrop-saturate-[1.6] transition-colors hover:bg-glass-highlight/40"
                 >
                   <Globe aria-hidden className="size-3.5" />
+                </a>
+              )}
+              {downloadUrl && (
+                <a
+                  href={downloadUrl}
+                  download
+                  aria-label={downloadLabel}
+                  title={downloadLabel}
+                  className="glass inline-flex size-8 items-center justify-center rounded-full text-foreground backdrop-blur-(--backdrop-blur) backdrop-saturate-[1.6] transition-colors hover:bg-glass-highlight/40"
+                >
+                  <Download aria-hidden className="size-3.5" />
                 </a>
               )}
               {githubUrl && (
